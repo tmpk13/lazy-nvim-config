@@ -8,3 +8,5 @@ vim.opt.number = true
 vim.keymap.set('n', '<leader>tl', ':leftabove vsplit | terminal<CR>')
 -- Open terminal on right side: `Space + T + R`
 vim.keymap.set('n', '<leader>tr', ':rightbelow vsplit | terminal<CR>')
+-- Save
+vim.keymap.set('n', '<leader>w', ':w<CR>')
