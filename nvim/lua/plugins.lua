@@ -35,16 +35,16 @@ return {
 
     -- Completion
     {
-      'neovim/nvim-lspconfig',
-      config = function()
-        -- Python
-        vim.lsp.config.pyright = {}
-        vim.lsp.enable('pyright')
-        
-        -- Rust
-        vim.lsp.config.rust_analyzer = {}
-        vim.lsp.enable('rust_analyzer')
-      end
+        'neovim/nvim-lspconfig',
+        config = function()
+            -- Python
+            vim.lsp.config.pyright = {}
+            vim.lsp.enable('pyright')
+            
+            -- Rust
+            vim.lsp.config.rust_analyzer = {}
+            vim.lsp.enable('rust_analyzer')
+        end
     },
     {
     'hrsh7th/nvim-cmp',
