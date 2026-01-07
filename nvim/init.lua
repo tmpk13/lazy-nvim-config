@@ -10,3 +10,7 @@ vim.keymap.set('n', '<leader>tl', ':leftabove vsplit | terminal<CR>')
 vim.keymap.set('n', '<leader>tr', ':rightbelow vsplit | terminal<CR>')
 -- Save
 vim.keymap.set('n', '<leader>w', ':w<CR>')
+
+-- Basic git add/commit commands
+vim.keymap.set('n', '<leader>ga', ':!git add %<CR>')
+vim.keymap.set('n', '<leader>gc', ':!git commit -m ')
