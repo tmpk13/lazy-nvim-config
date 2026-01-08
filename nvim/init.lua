@@ -13,4 +13,8 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 
 -- Basic git add/commit commands
 vim.keymap.set('n', '<leader>ga', ':!git add %<CR>')
-vim.keymap.set('n', '<leader>gc', ':!git commit -m ')
+vim.keymap.set('n', '<leader>gc', ':!git commit -m "')
+
+
+-- Set shiftwidth
+vim.keymap.set('n', '<leader>sw', ':set shiftwidth=4')
