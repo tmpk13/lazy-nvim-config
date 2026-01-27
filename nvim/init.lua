@@ -8,6 +8,9 @@ vim.opt.number = true
 vim.keymap.set('n', '<leader>tl', ':leftabove vsplit | terminal<CR>')
 -- Open terminal on right side: `Space + T + R`
 vim.keymap.set('n', '<leader>tr', ':rightbelow vsplit | terminal<CR>')
+-- Open terminal below editor
+vim.keymap.set('n', '<leader>tb', ':rightbelow split | terminal<CR>')
+
 -- Save
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 
@@ -15,6 +18,12 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>ga', ':!git add %<CR>')
 vim.keymap.set('n', '<leader>gc', ':!git commit -m "')
 
-
 -- Set shiftwidth
-vim.keymap.set('n', '<leader>sw', ':set shiftwidth=4')
+vim.keymap.set('n', '<leader>sw', ':set shiftwidth=4<CR>')
+
+-- Basic cargo commands
+vim.keymap.set('n', '<leader>cr', ':!cargo run<CR>')
+vim.keymap.set('n', '<leader>ca', ':!cargo add ')
+
+
+
