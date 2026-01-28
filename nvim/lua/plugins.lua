@@ -1,11 +1,25 @@
 return {
+    -- List manager
+    {
+        "mason-org/mason.nvim",
+        opts = {}
+    },
+    -- Hover info support
+    "lewis6991/hover.nvim",
     -- Lang Server For Config
     "folke/neodev.nvim",
     -- Show NVIm Hotkey Completion
     "folke/which-key.nvim",
     -- JSON Config Manager
     { "folke/neoconf.nvim", cmd = "Neoconf" },
-	
+	{
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate',
+        opts={ 
+            indent = { enable = false } 
+        }
+    },
     -- Theme
     {
 	  'maxmx03/solarized.nvim',
@@ -35,16 +49,16 @@ return {
 
     -- Completion
     {
-        'neovim/nvim-lspconfig',
-        config = function()
-            -- Python
-            vim.lsp.config.pyright = {}
-            vim.lsp.enable('pyright')
-            
-            -- Rust
-            vim.lsp.config.rust_analyzer = {}
-            vim.lsp.enable('rust_analyzer')
-        end
+      'neovim/nvim-lspconfig',
+      config = function()
+        -- Python
+        vim.lsp.config.pyright = {}
+        vim.lsp.enable('pyright')
+        
+        -- Rust
+        vim.lsp.config.rust_analyzer = {}
+        vim.lsp.enable('rust_analyzer')
+      end
     },
     {
     'hrsh7th/nvim-cmp',
@@ -77,5 +91,27 @@ return {
         ---@module "ibl"
         ---@type ibl.config
         opts = {},
+    },
+    -- Lazy Git
+    {
+        "kdheepak/lazygit.nvim",
+        lazy = true,
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        -- setting the keybinding for LazyGit with 'keys' is recommended in
+        -- order to load the plugin when the command is run for the first time
+        keys = {
+            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        }
     }
 }
+
