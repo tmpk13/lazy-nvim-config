@@ -10,6 +10,18 @@ return {
     "folke/neodev.nvim",
     -- Show NVIm Hotkey Completion
     "folke/which-key.nvim",
+    -- File tree
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+        require("nvim-tree").setup {}
+        end,
+    },
     -- JSON Config Manager
     { "folke/neoconf.nvim", cmd = "Neoconf" },
 	{
