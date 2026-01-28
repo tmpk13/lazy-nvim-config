@@ -21,9 +21,9 @@ vim.keymap.set('n', '<leader>gc', ':!git commit -m ')
 
 -- Basic cargo commands
 vim.keymap.set('n', '<leader>cr', ':!cargo run<CR>')
-vim.keymap.set('n', '<leader>ca', ':!cargo add -m ')
+vim.keymap.set('n', '<leader>ca', ':!cargo add ')
 vim.keymap.set('n', '<leader>cf', ':!rustfmt %<CR>')
-vim.keymap.set('n', '<leader>cc', ':!cargo clippy %<CR>')
+vim.keymap.set('n', '<leader>cc', ':!cargo clippy<CR>')
 
 
 -- Hover
