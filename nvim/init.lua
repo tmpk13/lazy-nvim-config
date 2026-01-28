@@ -4,9 +4,6 @@ vim.opt.shiftwidth = 4    -- Number of spaces for each indent
 vim.opt.expandtab = true  -- Convert tabs to spaces
 vim.opt.number = true
 
--- Set shiftwidth
-vim.keymap.set('n', '<leader>sw', ':set shiftwidth=4<CR>')
-
 -- Open terminal on right side: `Space + T + L`
 vim.keymap.set('n', '<leader>tl', ':leftabove vsplit | terminal<CR>')
 -- Open terminal on right side: `Space + T + R`
@@ -24,6 +21,10 @@ vim.keymap.set('n', '<leader>cr', ':!cargo run<CR>')
 vim.keymap.set('n', '<leader>ca', ':!cargo add ')
 vim.keymap.set('n', '<leader>cf', ':!rustfmt %<CR>')
 vim.keymap.set('n', '<leader>cc', ':!cargo clippy<CR>')
+
+-- File Tree Toggle
+vim.keymap.set('n', '<leader>b', ':NvimTreeToggle<CR>')
+
 
 
 -- Hover
@@ -79,4 +80,34 @@ vim.keymap.set('n', '<MouseMove>', function()
 end, { desc = 'hover.nvim (mouse)' })
 
 vim.o.mousemoveevent = true
+
+
+
+-- File Tree
+-- https://github.com/nvim-tree/nvim-tree.lua
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 
